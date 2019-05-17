@@ -1,0 +1,77 @@
+body{
+	background: white;
+	font-family: sans-serif;
+	margin: 0;
+	top:0;
+}
+
+img{
+	width: 512px;
+	border-radius: 6px;
+}
+
+#logo{
+	width: 128px;
+}
+
+header{
+	background: #3f72af;
+	border-radius: 6px;
+}
+
+#seccion{
+	background: white;	
+	border-radius: 6px;
+}
+
+.boxLogin{
+	border: solid;
+	border-color: black;	
+}
+
+#articulo1{
+	color: white;
+	margin: 12px;
+	text-align: right;
+	background: #33313b;
+	border-radius: 6px;
+	padding: 12px;
+}
+
+#articulo2{
+	color: white;
+	margin: 12px;
+	text-align: left;
+	background: #33313b;
+	border-radius: 6px;
+	padding: 12px;
+}
+
+#imgarticulo1{
+	margin: 6px;
+	width: 75%;
+}
+
+#imgarticulo2{
+	margin: 6px;
+	width: 75%;
+}
+
+#parrafoarticulo1{
+	text-align: left;
+}
+
+#parrafoarticulo2{
+	text-align: left;
+}
+
+footer{
+	color: white;
+	background: #112d4e;	
+	border-radius: 6px; 	
+}
+
+.boxFooter{
+	opacity: 0.2;
+	font-size: 12px;
+}

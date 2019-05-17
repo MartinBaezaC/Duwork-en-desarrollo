@@ -1,0 +1,95 @@
+{% load staticfiles %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DuWork</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css">
+
+	<link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+	<header>
+		<div class="row start-xs">
+			<div class="col col-lg-1
+							col-md-1
+							col-xd-1">
+				<div class="box">
+					<h1 id="EncabezadoPagina">DuWork</h1>
+				</div>
+			</div>		
+			<div class="col col-lg-1
+							col-md-1
+							col-xd-1">
+				<div class="box">
+					<img id="logo" src="{% static "img/duworklogo.png" %}"
+					alt="Aquí estaba el logo">
+				</div>
+			</div>	
+		</div>
+		<div class="row center-xs">
+			<div class="col col-lg-12" style="color: white;">
+				{% if user.is_authenticated %}
+				  Bienvenido {{ user.username }}!
+				  <p><a href="{% url 'logout' %}">logout</a></p>		  
+				{% else %}
+				  <p>Usted no esta logeado</p>
+				  <a class="aNav" href="{% url 'login' %}" style="color: white;">Logeate!</a>
+				{% endif %}
+			</div>
+			
+		</div>
+	</header>
+	<nav>
+		<div class="row center-xs">
+			<div class="col col-lg-12
+							col-md-12
+							col-xs-12">
+				<div class="box">
+					<a href="/accounts/login">Logeate</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<section id="seccion">
+		<div class="row center-xs">
+			<div id="articulo1" class="col col-lg-5
+							col-md-5
+							col-xs-11">
+				<div class="box">
+					<img id="imgarticulo1" src="{% static "img/img1.jpg" %}" alt="Aquí había una imagen">
+					<h2>Acerca de nosotros</h2>
+					<p id="parrafoarticulo1">
+						Lorem askdjk kasjk jk jkfjk ajka jka jk as akdjkasjkdjk gkdfklgkl eriowieru asnzxcn aslkdjaskl  kldfkjf fghdfgdf  jtyu ty werwer ytr 
+					</p>
+				</div>
+				
+			</div>
+			<div id="articulo2" class="col-lg-5
+						col-md-5
+						col-xs-11">
+				<div class="box">
+					<img id="imgarticulo2" src="{% static "img/img2.jpg" %}" alt="Aquí había una imagen">
+					<h2>Contáctanos</h2>
+					<p id="parrafoarticulo2">
+						Lorem askdjk kasjk jk jkfjk ajka jka jk as akdjkasjkdjk gkdfklgkl eriowieru asnzxcn aslkdjaskl  kldfkjf fghdfgdf  jtyu ty werwer ytr 
+					</p>
+				</div>
+				
+			</div>
+			
+		</div>
+	</section>
+	<footer>
+		<div class="row start-xs">
+			<div class="col-xs-12">
+				<div class="box">
+					<h2>DuWork</h2>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "pagina/base.html" %}
+{% block content %}
+	<section id="seccion">
+		<div class="row center-xs">
+			<div class="col col-lg-12">
+				<div class="boxLogin" style="border: solid; border-color: gray; margin: 12px;">
+					<h2>Inicio de sesión</h2>
+					<form method="post">
+	    				{% csrf_token %}
+	    				{{ form.as_p }}
+	    				<button type="submit">Login</button>
+	    				<p>No tienes cuenta? <a href="/pagina/registro">Registrate</a></p>
+	  				</form>
+				</div>				
+			</div>  				
+		</div>
+	</section>
+{% endblock %}
+
+	
+	

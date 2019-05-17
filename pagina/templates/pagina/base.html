@@ -1,0 +1,140 @@
+{% load staticfiles %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DuWork</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css">
+
+	<link rel="stylesheet" href="{% static 'css/base_estilo.css' %}">
+	<link rel="stylesheet" href="{% static 'css/nav_estilo.css' %}">
+
+	
+</head>
+
+
+
+<body>
+<div class="container">
+	<nav>
+		<div id="navbar" class="row center-xs">
+			<div  class="col col-lg-4
+							col-md-4
+							col-xs-4">
+				<div class="box">
+					<a selected href="/pagina/inicio">Inicio</a>
+				</div>
+			</div>
+			<div  class="col col-lg-4
+							col-md-4
+							col-xs-4">
+				<div class="box">
+					<a href="/accounts/login">Inicio de sesión</a>
+				</div>
+			</div>
+			<div  class="col col-lg-4
+							col-md-4
+							col-xs-4">
+				<div class="box">
+					<a href="/accounts/login">Quienes somos</a>
+				</div>
+			</div>
+			
+		</div>
+
+		<script>		 
+		window.onscroll = function() {myFunction()};		
+		var navbar = document.getElementById("navbar");		
+		var sticky = navbar.offsetTop;		
+		function myFunction() {
+		  if (window.pageYOffset >= sticky) {
+		    navbar.classList.add("sticky")
+		  } else {
+		    navbar.classList.remove("sticky");
+		  }
+		}
+		</script>
+
+	</nav>
+
+	<header>
+		<div class="row start-xs">		
+			<div class="col col-lg-4
+							col-md-4
+							col-xs-4">
+				<div class="box">
+					<img id="logo" src="{% static "img/duworklogo.png" %}"
+					alt="Aquí estaba el logo">
+				</div>
+			</div>	
+			<div class="col col-lg-6
+							col-md-6
+							col-xs-6">
+				<div class="box">
+					
+				</div>
+			</div>
+			<div class="col col-lg-2
+							col-md-2
+							col-xs-2" style="color: white;">
+				{% if user.is_authenticated %}
+				  Bienvenido, {{ user.username }}!
+				  <p><a href="{% url 'logout' %}">Cerrar sesión</a></p>		  
+				{% else %}
+				  <p>Usted no esta logeado</p>
+				  <a href="{% url 'login' %}" style="color: white;">Logeate!</a>
+				{% endif %}
+			</div>
+		</div>
+		<div class="row center-xs">
+			
+			
+		</div>
+	</header>
+	
+	{% block content %}
+	<section id="seccion">
+		<div class="row center-xs">
+			<div id="articulo1" class="col col-lg-5
+							col-md-5
+							col-xs-11">
+				<div class="box">
+					<img id="imgarticulo1" src="{% static "img/img1.jpg" %}" alt="Aquí había una imagen">
+					<h2>Acerca de nosotros</h2>
+					<p id="parrafoarticulo1">
+						Lorem askdjk kasjk jk jkfjk ajka jka jk as akdjkasjkdjk gkdfklgkl eriowieru asnzxcn aslkdjaskl  kldfkjf fghdfgdf  jtyu ty werwer ytr 
+					</p>
+				</div>
+				
+			</div>
+			<div id="articulo2" class="col-lg-5
+						col-md-5
+						col-xs-11">
+				<div class="box">
+					<img id="imgarticulo2" src="{% static "img/img2.jpg" %}" alt="Aquí había una imagen">
+					<h2>Contáctanos</h2>
+					<p id="parrafoarticulo2">
+						Lorem askdjk kasjk jk jkfjk ajka jka jk as akdjkasjkdjk gkdfklgkl eriowieru asnzxcn aslkdjaskl  kldfkjf fghdfgdf  jtyu ty werwer ytr 
+					</p>
+				</div>
+				
+			</div>
+			
+		</div>
+	</section>
+	{% endblock content %}	
+	<footer>
+		<div class="row start-xs">
+			<div class="col-xs-4">
+				<div class="boxFooter">
+					<h2>Proyecto DuWork Gestiòn àgil de proyectos</h2>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
+	
+</body>
+</html>
